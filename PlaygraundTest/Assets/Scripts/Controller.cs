@@ -57,24 +57,41 @@ public class Controller : MonoBehaviour
                 Debug.Log($"Выпил бутылок {i}");
             }
         }
-            Debug.Log("\nDo\n");
-            do
-            {
-                Debug.Log($"Выпил бутылок {i}");
-                i++;
-            }
-            while (i < 10);
+
+        Debug.Log("\nDo\n");
+        do
+        {
+            Debug.Log($"Выпил бутылок {i}");
+            i++;
+        }
+        while (i < 10);
 
         Debug.Log("\nWhile\n");
-        //Мы погибаем!!!!
-        //int t = 5;
-        //while (t > 0)
-        //{
-        //    Debug.Log(i);
-        //    i--;
-        //}
-        
-        
+        int t = 5;
+        while (t > 0)
+        {
+            Debug.Log(t);
+            t--;
+        }
+
+        Debug.Log("\nBreak\n");
+        for (int b = 1; b < 100; b++)
+        {
+            Debug.Log($"Проценты Лукашенко {b}% = 100%");
+            if (b == 3)
+                break;
+            Debug.Log("Змагары на помащ");
+        }
+
+        Debug.Log("\nContinue\n");
+        for (int b = 1; b < 10; b++)
+        {
+            if (b == 3)
+                continue;
+            Debug.Log(b);
+        }
+
     }
-#endregion
+    #endregion
 }
+
