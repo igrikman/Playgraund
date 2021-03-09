@@ -6,10 +6,14 @@ public class Controller : MonoBehaviour
     #region GemaLoop
     private void Awake()
     {
-        Matimatick();
-        Loop();
-        Massiv();
-        Manymass();
+        Virtual();
+        Abstrakt();
+
+
+        //Matimatick();
+        //Loop();
+        //Massiv();
+        //Manymass();
     }
 
     private void OnEnable()
@@ -127,12 +131,103 @@ public class Controller : MonoBehaviour
         }
 
         int[,] mMasiv = { { 14, 13, 12, 11, 10 }, { 9, 8, 7, 6, 5 }, { 4, 3, 2, 1, 0 } };
-        foreach(int i in mMasiv)
+        foreach (int i in mMasiv)
         {
             Debug.Log(i);
         }
-        
+
     }
+    #endregion
+
+    #region HomeTask 
+
+    #region VirtualReg
+    private void Virtual()
+    {
+        Man sport = new Man("Billy", "-Hey buddy, I think you've got the wrong door, the leather club is two blocks down.");
+        Man leather = new Man("Leather man", "- Fuck you.");
+
+        sport.Display();
+        leather.Display();
+
+    }
+    class Gachi
+    {
+        public string Name { get; set; }
+        public Gachi(string name)
+        {
+            Name = name;
+        }
+        public virtual void Display()
+        {
+            Debug.Log(Name);
+        }
+    }
+
+    class Man : Gachi
+    {
+        public string Say { get; set; }
+        public Man(string name, string say) : base(name)
+        {
+            Say = say;
+        }
+        public override void Display()
+        {
+            Debug.Log($"{Name} say {Say}");
+        }
+    }
+    #endregion
+
+    #region AbstraktReg
+    private void Abstrakt()
+    {
+        GoodBoy dog1 = new GoodBoy("Vetsuta", "Sоn of a dog");
+        BadBoy dog2 = new BadBoy("Kaha", 5);
+
+        dog1.PrintGB();
+        dog2.PrintBB();
+    }
+
+    abstract class Dog
+    {
+        public string Name { get; set; }
+        public Dog(string name)
+        {
+            Name = name;
+        }
+        public void Print()
+        {
+            Debug.Log(Name);
+        }
+
+    }
+    class GoodBoy : Dog
+    {
+        public string Say { get; set; }
+        public GoodBoy(string name, string say) : base(name)
+        {
+            Say = say;
+        }
+        public void PrintGB()
+        {
+            Debug.Log($"{Name} do it {Say}");
+        }
+    }
+
+    class BadBoy : Dog
+    {
+        public int Shit { get; set; }
+        public BadBoy(string name, int shit) : base(name)
+        {
+            Shit = shit;
+        }
+        public void PrintBB()
+        {
+            Debug.Log($"{Name} do it {Shit} crap");
+        }
+    }
+    #endregion
+
     #endregion
 }
 
