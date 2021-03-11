@@ -8,8 +8,7 @@ public class Controller : MonoBehaviour
     {
         Virtual();
         Abstrakt();
-
-
+        Inter();
         //Matimatick();
         //Loop();
         //Massiv();
@@ -228,6 +227,45 @@ public class Controller : MonoBehaviour
     }
     #endregion
 
-    #endregion
+    #region interface
+
+
+    public void Inter()
+    {
+        IPut you = new Clen("Igor");
+        you.Suka();
+        
+    }
+
+    
+
+    interface IPut
+    {
+        string Name { get; set; }
+
+        void Suka();
+    }
+    class Clen : IPut
+    {
+
+        public string Name { get; set; }
+
+        public Clen(string name)
+        {
+            Name = name;
+        }
+
+        public void Suka()
+        {
+            Debug.Log($"{Name} заебался идти блядь...");
+        }
+        
+
+    }
+
 }
+
+    #endregion
+    #endregion
+
 
