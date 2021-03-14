@@ -64,6 +64,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Controller.cs" />
+    <Compile Include="Assets\Scripts\Dragon lvl 1\AirDragon.cs" />
+    <Compile Include="Assets\Scripts\Dragon lvl 1\FireDragon.cs" />
+    <Compile Include="Assets\Scripts\Dragon lvl 1\RockDragon.cs" />
+    <Compile Include="Assets\Scripts\Dragon lvl 1\WaterDragon.cs" />
+    <Compile Include="Assets\Scripts\Dragon lvl 2\IceDragon.cs" />
+    <Compile Include="Assets\Scripts\Dragon lvl 2\LavaDragon.cs" />
+    <Compile Include="Assets\Scripts\Dragon lvl 2\SteamDragon.cs" />
+    <Compile Include="Assets\Scripts\Dragon lvl 2\SwampDragon.cs" />
+    <Compile Include="Assets\Scripts\ISpirit\IAir.cs" />
+    <Compile Include="Assets\Scripts\ISpirit\IFire.cs" />
+    <Compile Include="Assets\Scripts\ISpirit\IRock.cs" />
+    <Compile Include="Assets\Scripts\ISpirit\IWater.cs" />
+    <Compile Include="Assets\Scripts\lvl 0\Snake.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Playgraund/PlaygraundTest/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
