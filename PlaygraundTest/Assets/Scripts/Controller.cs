@@ -7,7 +7,11 @@ namespace Assets.Scripts
         #region GemaLoop
         private void Awake()
         {
-            LoreHill();
+
+            TestMMdragon();
+
+           // TestMdragon();
+
 
             //Virtual();
             //Abstrakt();
@@ -268,35 +272,55 @@ namespace Assets.Scripts
         #endregion
 
         #region DragonLore
-
-        private static void LoreHill()
+        public enum ElementalEnum
         {
-            Debug.Log("Lore Dragon Hill");
-            Snake.Snakes();
-            Debug.Log("Первые драконы");
+            Water = 1,
+            Fire,
+            Earth,
+            Air
+        }
+        private static void TestMdragon()
+        {
+            Debug.Log("Воздух");
 
-            AirDragon A = new AirDragon("Zews", "leather", "Yes", "cold air");
-            A.Info();
-            WaterDragon W = new WaterDragon("Voloda", "scales", "yes", "pulse water");
-            W.Info();
-            RockDragon R = new RockDragon("Sning", "stone", "no", "absent");
-            R.Info();
-            FireDragon F = new FireDragon("Piro", "iron scales", "yes", "FIRE JET");
-            F.Info();
+            AirDragon a = new AirDragon();
+            a.EasyCast();
+            a.MidlCast();
+            a.HardCast();
 
-            Debug.Log("\nСпустя столетия они начали мутировать.\n" +
-                "Превращаться в ещё более страшные формы.\n" +
-                "Драконы 2 класса опастности");
-            IceDragon I = new IceDragon("IceTi", "Ice", "Yes", "Ice Rock");
-            I.Info();
-            SteamDragon S = new SteamDragon("Gaibe","Gosth","yes","hot steam");
-            S.Info();
-            SwampDragon SW = new SwampDragon("Igor", "peat", "no", "ground stream");
-            SW.Info();
-            LavaDragon L = new LavaDragon("Gardai","Lava","yes","lava stream");
-            L.Info();
+            Debug.Log("Земля");
+
+            EartheDragon e = new EartheDragon();
+            e.EasyCast();
+            e.MidlCast();
+            e.HardCast();
+
+            Debug.Log("Вода");
+
+            WaterDragon w = new WaterDragon();
+            w.EasyCast();
+            w.MidlCast();
+            w.HardCast();
+
+            Debug.Log("Огонь");
+
+            FireDragon f = new FireDragon();
+            f.EasyCast();
+            f.MidlCast();
+            f.HardCast();
 
         }
+
+        private static void TestMMdragon()
+        {
+            PlatinumDragon p = new PlatinumDragon();
+            p.EasyCast();
+            p.MidlCast();
+            p.HardCast();
+        }
+
+
+
 
 
         #endregion

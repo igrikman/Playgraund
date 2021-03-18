@@ -64,19 +64,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Controller.cs" />
-    <Compile Include="Assets\Scripts\Dragon lvl 1\AirDragon.cs" />
-    <Compile Include="Assets\Scripts\Dragon lvl 1\FireDragon.cs" />
-    <Compile Include="Assets\Scripts\Dragon lvl 1\RockDragon.cs" />
-    <Compile Include="Assets\Scripts\Dragon lvl 1\WaterDragon.cs" />
-    <Compile Include="Assets\Scripts\Dragon lvl 2\IceDragon.cs" />
-    <Compile Include="Assets\Scripts\Dragon lvl 2\LavaDragon.cs" />
-    <Compile Include="Assets\Scripts\Dragon lvl 2\SteamDragon.cs" />
-    <Compile Include="Assets\Scripts\Dragon lvl 2\SwampDragon.cs" />
-    <Compile Include="Assets\Scripts\ISpirit\IAir.cs" />
-    <Compile Include="Assets\Scripts\ISpirit\IFire.cs" />
-    <Compile Include="Assets\Scripts\ISpirit\IRock.cs" />
-    <Compile Include="Assets\Scripts\ISpirit\IWater.cs" />
-    <Compile Include="Assets\Scripts\lvl 0\Snake.cs" />
+    <Compile Include="Assets\Scripts\V1.1\Dragon\Dragon.cs" />
+    <Compile Include="Assets\Scripts\V1.1\Dragon\FlyDragon.cs" />
+    <Compile Include="Assets\Scripts\V1.1\Dragon\MagicDragon\AirDragon.cs" />
+    <Compile Include="Assets\Scripts\V1.1\Dragon\MagicDragon\EartheDragon.cs" />
+    <Compile Include="Assets\Scripts\V1.1\Dragon\MagicDragon\FireDragon.cs" />
+    <Compile Include="Assets\Scripts\V1.1\Dragon\MagicDragon\WaterDragon.cs" />
+    <Compile Include="Assets\Scripts\V1.1\Dragon\MetalDragon\AlumDragon.cs" />
+    <Compile Include="Assets\Scripts\V1.1\Dragon\MetalDragon\BronzeDragon.cs" />
+    <Compile Include="Assets\Scripts\V1.1\Dragon\MetalDragon\CopperDragon.cs" />
+    <Compile Include="Assets\Scripts\V1.1\Dragon\MetalDragon\GoldDragon.cs" />
+    <Compile Include="Assets\Scripts\V1.1\Dragon\MetalDragon\PlatinumDragon.cs" />
+    <Compile Include="Assets\Scripts\V1.1\Humanoid\Dragonoid.cs" />
+    <Compile Include="Assets\Scripts\V1.1\Humanoid\Human.cs" />
+    <Compile Include="Assets\Scripts\V1.1\Humanoid\Kobold.cs" />
+    <Compile Include="Assets\Scripts\V1.1\Humanoid\Lizzard.cs" />
+    <Compile Include="Assets\Scripts\V1.1\Humanoid\Rats.cs" />
+    <Compile Include="Assets\Scripts\V1.1\Interfeice\IElmagic.cs" />
+    <Compile Include="Assets\Scripts\V1.1\Interfeice\IGun.cs" />
+    <Compile Include="Assets\Scripts\V1.1\Interfeice\IPotions.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Playgraund/PlaygraundTest/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
