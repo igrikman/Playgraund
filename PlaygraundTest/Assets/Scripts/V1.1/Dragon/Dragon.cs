@@ -7,16 +7,19 @@ using UnityEngine;
 using static Assets.Scripts.Controller;
 namespace Assets.Scripts
 {
-    class Dragon : Dragonoid
+    class Dragon : Lizzard
     {
-        public new string Leather { get; set; }
-        public new string Tail { get; set; }
-        public new int HP = 100;
+        private string Leather { get; set; }
+        private string Tail { get; set; }
+
+        private int HP = 100;
         public override void Regeneration()
         {
-            int reg = 25;
-            reg += 0;
+            Debug.Log("регенерация");
         }
-
+        public static new void Lor()
+        {
+            Debug.Log("Дракон");
+        }
     }
 }

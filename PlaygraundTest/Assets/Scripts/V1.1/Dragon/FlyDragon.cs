@@ -9,15 +9,17 @@ namespace Assets.Scripts
 {
     abstract class FlyDragon: Dragon
     {
-        public new string Leather { get; set; }
-        public new string Tail { get; set; }
-        public string Fly { get; set; }
-        public new int HP = 120;
+        private string Leather { get; set; }
+        private string Tail { get; set; }
+        private string Fly { get; set; }
+        private int HP = 120;
         public override void Regeneration()
         {
-            int reg = 30;
-            reg += 0;
+            Debug.Log("регенерация");
         }
-
+        public static new void Lor()
+        {
+            Debug.Log("Дракон летающий");
+        }
     }
 }

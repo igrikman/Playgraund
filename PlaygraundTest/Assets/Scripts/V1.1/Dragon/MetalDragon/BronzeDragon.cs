@@ -7,20 +7,26 @@ using UnityEngine;
 using static Assets.Scripts.Controller;
 namespace Assets.Scripts
 {
-    class BronzeDragon:CopperDragon, IGun
+    class BronzeDragon:CopperDragon, IWeapon
     {
-        public new string Leather { get; set; }
-        public new string Tail { get; set; }
-        public new string Fly { get; set; }
+        private string Leather { get; set; }
+        private string Tail { get; set; }
+        private string Fly { get; set; }
 
-        public new int HP = 320;
-        public override void Regeneration()
+        private int HP = 320;
+        public new void UseW(params Weapon[] weapon)
         {
-            int reg = 30;
-            reg += 0;
+            for (int i = 0; i < 4; i++)
+            {
+                if (i == 1)
+                {
+                    Debug.Log($" use {weapon[1]}");
+                }
+            }
         }
-        public new string Sword { get; set; }
-        public new string Сannon { get; set; }
-        public new string Tool { get; set; }
+        public static new void Lor()
+        {
+            Debug.Log("Дракон бронза");
+        }
     }
 }

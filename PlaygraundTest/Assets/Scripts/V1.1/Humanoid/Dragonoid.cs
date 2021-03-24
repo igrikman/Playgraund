@@ -4,26 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
-
+using static Assets.Scripts.Controller;
 namespace Assets.Scripts
 {
-    abstract class Dragonoid : Human 
+    abstract class Dragonoid: Dragon
     {
-        public new string Leather { get; set; }
+        private string Leather { get; set; }
 
-        public string Tail { get; set; }
+        private string Tail { get; set; }
 
-        public new int HP = 55;
-        public virtual void Regeneration()
+        private int HP = 55;
+        public override void Regeneration()
         {
-            int reg = 10;
-            reg += 0;
+            Debug.Log("регенерация");
         }
-        public new string Health { get; set; }
-        public new string Metophorphosis { get; set; }
-        public new string Mutation { get; set; }
-        public new string Sword { get; set; }
-        public string Сannon { get; set; }
-        public string Tool { get; set; }
+
+        public static new void Lor()
+        {
+            Debug.Log("Драконолюд");
+        }
+
+
     }
 }

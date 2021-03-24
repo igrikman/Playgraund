@@ -9,14 +9,21 @@ namespace Assets.Scripts
 {
     abstract class Lizzard 
     {
-        public string Leather { get; set; }
-        public string Tail { get; set; }
+        private string Leather { get; set; }
+        private string Tail { get; set; }
 
-        public int HP = 15;
+        private int HP = 15;
         public virtual void Regeneration()
-        { 
-            int reg = 5;
-            reg += 0; ;
+        {
+            Debug.Log("регенерация");
         }
+
+        public static void Lor()
+        {
+            Debug.Log("Яширица");
+        }
+        
+           
+        
     }
 }

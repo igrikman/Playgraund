@@ -7,8 +7,8 @@ namespace Assets.Scripts
         #region GemaLoop
         private void Awake()
         {
-
-            TestMMdragon();
+            TestLor();
+          //  TestMMdragon();
 
            // TestMdragon();
 
@@ -279,6 +279,13 @@ namespace Assets.Scripts
             Earth,
             Air
         }
+
+        public enum Weapon
+        {
+            Sword,
+            Canoon,
+            Tool
+        }
         private static void TestMdragon()
         {
             Debug.Log("Воздух");
@@ -320,7 +327,25 @@ namespace Assets.Scripts
         }
 
 
+        private static void TestLor()
+        {
+            Lizzard.Lor();
+            Dragon.Lor();
+            Dragonoid.Lor();
+            Kobold.Lor();
+            Dragonborn.Lor();
+            FlyDragon.Lor();
+            AirDragon.Lor();
+            EartheDragon.Lor();
+            FireDragon.Lor();
+            WaterDragon.Lor();
+            AlumDragon.Lor();
+            CopperDragon.Lor();
+            BronzeDragon.Lor();
+            GoldDragon.Lor();
+            PlatinumDragon.Lor();
 
+        }
 
 
         #endregion
