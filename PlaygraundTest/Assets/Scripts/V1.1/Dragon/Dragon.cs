@@ -17,9 +17,9 @@ namespace Assets.Scripts
         {
             Debug.Log("регенерация");
         }
-        public static new void Lor()
-        {
-            Debug.Log("Дракон");
-        }
+        
+        public static new string  lor = "2";
+
+       
     }
 }

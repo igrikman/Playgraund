@@ -7,23 +7,28 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    abstract class Lizzard 
+    abstract class Lizzard
     {
         private string Leather { get; set; }
         private string Tail { get; set; }
 
         private int HP = 15;
+
+       
+
         public virtual void Regeneration()
         {
             Debug.Log("регенерация");
         }
 
-        public static void Lor()
+
+
+        public static string lor = "1";
+        
+        public static void Read()
         {
-            Debug.Log("Яширица");
+            Debug.Log($"{lor}");
         }
-        
-           
-        
+
     }
 }

@@ -62,10 +62,7 @@ namespace Assets.Scripts
             }
         }
 
-        public static new void Lor()
-        {
-            Debug.Log("Дракон платина");
-        }
+       
     }
 
 }

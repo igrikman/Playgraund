@@ -329,21 +329,12 @@ namespace Assets.Scripts
 
         private static void TestLor()
         {
-            Lizzard.Lor();
-            Dragon.Lor();
-            Dragonoid.Lor();
-            Kobold.Lor();
-            Dragonborn.Lor();
-            FlyDragon.Lor();
-            AirDragon.Lor();
-            EartheDragon.Lor();
-            FireDragon.Lor();
-            WaterDragon.Lor();
-            AlumDragon.Lor();
-            CopperDragon.Lor();
-            BronzeDragon.Lor();
-            GoldDragon.Lor();
-            PlatinumDragon.Lor();
+
+            Lizzard.Read();
+            Dragon.Read();
+            FlyDragon.Read();
+
+            
 
         }
 
