@@ -7,20 +7,7 @@ namespace Assets.Scripts
         #region GemaLoop
         private void Awake()
         {
-            TestLor();
-          //  TestMMdragon();
-
-           // TestMdragon();
-
-
-            //Virtual();
-            //Abstrakt();
-            //Inter();
-
-            //Matimatick();
-            //Loop();
-            //Massiv();
-            //Manymass();
+            
         }
 
         private void OnEnable()
@@ -269,7 +256,7 @@ namespace Assets.Scripts
         }
 
         #endregion
-        #endregion
+
 
         #region DragonLore
         public enum ElementalEnum
@@ -334,11 +321,12 @@ namespace Assets.Scripts
             Dragon.Read();
             FlyDragon.Read();
 
-            
+
 
         }
 
 
+        #endregion
         #endregion
     }
 }
