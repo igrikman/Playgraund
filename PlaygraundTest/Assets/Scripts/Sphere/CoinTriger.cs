@@ -4,14 +4,23 @@ using UnityEngine;
 
 public class CoinTriger : MonoBehaviour
 {
-    
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision CoinCollision)
     {
-        if(collision.gameObject.tag =="Player")
+        Debug.LogWarning("Collision Enteret");
+        if (CoinCollision.gameObject.tag == "CoinTag")
         {
-            Destroy(gameObject);
+            Debug.LogWarning("Collision object is Coin");
+            Destroy(CoinCollision.gameObject, 0f);
+        }
+        else
+        {
+            Debug.LogWarning("Collision object isn't a Coin");
         }
     }
 
-
+    private void Update()
+    {
+        
+    }
 }
+   
