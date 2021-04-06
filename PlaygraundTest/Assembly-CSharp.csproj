@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Controller.cs" />
     <Compile Include="Assets\Scripts\Sphere\CoinTriger.cs" />
+    <Compile Include="Assets\Scripts\Sphere\Enemy.cs" />
     <Compile Include="Assets\Scripts\Sphere\Movement.cs" />
     <Compile Include="Assets\Scripts\Sphere\SimpleCamera.cs" />
     <Compile Include="Assets\Scripts\V1.1\Dragon\Dragon.cs" />
