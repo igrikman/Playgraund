@@ -63,6 +63,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Healtbar.cs" />
+    <Compile Include="Assets\Player.cs" />
     <Compile Include="Assets\Scripts\Controller.cs" />
     <Compile Include="Assets\Scripts\Sphere\CoinTriger.cs" />
     <Compile Include="Assets\Scripts\Sphere\Enemy.cs" />

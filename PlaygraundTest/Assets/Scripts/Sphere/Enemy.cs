@@ -8,11 +8,12 @@ public class Enemy : MonoBehaviour
     private Rigidbody enemyRb;
     public GameObject player;
 
+
     private void OnCollisionEnter(Collision EnemyCol)
     {
         if (EnemyCol.gameObject.tag == "Player")
         {
-            Destroy(player, 0f);
+            Destroy(gameObject, 0f);
         }
     }
     void Start()
