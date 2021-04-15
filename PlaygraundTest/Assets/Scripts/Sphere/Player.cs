@@ -25,16 +25,18 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (currentHealth == 0)
-        {
-            Debug.LogError("Вы умерли");
-            Destroy(gameObject, 0f);
-        }
+      
     }
     void TakeDamage(int damage)
     {
         currentHealth -= damage;
         healthbar.SetHealth(currentHealth);
+        
+        if (currentHealth == 0)
+        {
+            Debug.LogError("Вы умерли");
+            Destroy(gameObject, 0f);
+        }
     }
 
   
