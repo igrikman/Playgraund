@@ -7,12 +7,13 @@ public class Enemy : MonoBehaviour
     public float speed = 3.0f;
     private Rigidbody enemyRb;
     public GameObject player;
-
+    
 
     private void OnCollisionEnter(Collision EnemyCol)
     {
         if (EnemyCol.gameObject.tag == "Player")
         {
+            Debug.LogError("Destroy enemy");
             Destroy(gameObject, 0f);
         }
     }

@@ -7,24 +7,35 @@ public class Player : MonoBehaviour
     public int maxHealth = 3;
     public int currentHealth;
     public Healtbar healthbar;
+
+   
     void Start()
     {
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
     }
-
-   
-    void Update()
+    private void OnCollisionEnter(Collision PlayerCol)
     {
-     if(Input.GetKeyDown(KeyCode.Space))
+        if (PlayerCol.gameObject.tag == "Enemy")
         {
+            Debug.Log("Получил урон");
             TakeDamage(1);
         }
-        
+    }
+
+    void Update()
+    {
+        if (currentHealth == 0)
+        {
+            Debug.LogError("Вы умерли");
+            Destroy(gameObject, 0f);
+        }
     }
     void TakeDamage(int damage)
     {
         currentHealth -= damage;
         healthbar.SetHealth(currentHealth);
     }
+
+  
 }

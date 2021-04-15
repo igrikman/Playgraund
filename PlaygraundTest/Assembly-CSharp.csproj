@@ -63,12 +63,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Healtbar.cs" />
-    <Compile Include="Assets\Player.cs" />
     <Compile Include="Assets\Scripts\Controller.cs" />
     <Compile Include="Assets\Scripts\Sphere\CoinTriger.cs" />
     <Compile Include="Assets\Scripts\Sphere\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Sphere\Healtbar.cs" />
     <Compile Include="Assets\Scripts\Sphere\Movement.cs" />
+    <Compile Include="Assets\Scripts\Sphere\Player.cs" />
     <Compile Include="Assets\Scripts\Sphere\SimpleCamera.cs" />
     <Compile Include="Assets\Scripts\V1.1\Dragon\Dragon.cs" />
     <Compile Include="Assets\Scripts\V1.1\Dragon\FlyDragon.cs" />
