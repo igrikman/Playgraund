@@ -5,26 +5,12 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float speed = 3.0f;
+
+    [SerializeField]
     private Rigidbody enemyRb;
-    public GameObject player;
-    
 
-    private void OnCollisionEnter(Collision EnemyCol)
-    {
-        if (EnemyCol.gameObject.tag == "Player")
-        {
-            Debug.LogError("Destroy enemy");
-            Destroy(gameObject, 0f);
-        }
-    }
-    void Start()
-    {
-        enemyRb = GetComponent<Rigidbody>();
-    }
+    public void Go(GameObject player) => enemyRb.AddForce((player.transform.position - transform.position).normalized * speed);
 
-   
-    void Update()
-    {
-        enemyRb.AddForce((player.transform.position - transform.position).normalized * speed);
-    }
+    public void Die() => Destroy(gameObject);
+
 }

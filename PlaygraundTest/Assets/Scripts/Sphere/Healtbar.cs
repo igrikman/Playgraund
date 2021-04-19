@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class Healtbar : MonoBehaviour
 {
     public Slider slider;
+
     public void SetMaxHealth(int health)
     {
         slider.maxValue = health;
