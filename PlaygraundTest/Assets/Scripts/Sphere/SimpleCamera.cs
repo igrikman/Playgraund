@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SimpleCamera : MonoBehaviour
 {
-    public GameObject player;
+    [SerializeField] private GameObject player;
     private Vector3 offset;
 
     void Start()

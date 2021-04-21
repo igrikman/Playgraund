@@ -5,12 +5,11 @@ using UnityEngine.UI;
 using TMPro;
 public class Player : MonoBehaviour
 {
-    public int maxHealth = 3;
-    public int currentHealth;
-    public Healtbar healthbar;
-    public int score = 0;
-    public TextMeshProUGUI indicator;
-
+    [SerializeField] private int maxHealth = 3;
+    private int currentHealth;
+    [SerializeField] private Healtbar healthbar;
+    private int score = 0;
+    [SerializeField] private TextMeshProUGUI indicator;
     [SerializeField] private EnemyController enemyController;
 
     private void OnCollisionEnter(Collision PlayerCol)

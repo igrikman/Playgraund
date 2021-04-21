@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public float speed = 11.0f;
-    public GameObject player;
-    public List<Enemy> enemyList;
+    [SerializeField] private float speed = 11.0f;
+    [SerializeField] private GameObject player;
+    [SerializeField] private List<Enemy> enemyList;
 
     void Update()
     {

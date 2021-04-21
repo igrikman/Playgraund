@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public CharacterController controller;
-    public float speed = 10f;
+    [SerializeField] private CharacterController controller;
+    [SerializeField] private float speed = 10f;
 
     void Update()
     {
