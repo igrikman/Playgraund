@@ -64,12 +64,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Controller.cs" />
-    <Compile Include="Assets\Scripts\Sphere\Enemy.cs" />
-    <Compile Include="Assets\Scripts\Sphere\EnemyController.cs" />
-    <Compile Include="Assets\Scripts\Sphere\Healtbar.cs" />
-    <Compile Include="Assets\Scripts\Sphere\Movement.cs" />
-    <Compile Include="Assets\Scripts\Sphere\Player.cs" />
-    <Compile Include="Assets\Scripts\Sphere\SimpleCamera.cs" />
+    <Compile Include="Assets\Scripts\Enemy.cs" />
+    <Compile Include="Assets\Scripts\EnemyController.cs" />
+    <Compile Include="Assets\Scripts\FollowCamera.cs" />
+    <Compile Include="Assets\Scripts\Healtbar.cs" />
+    <Compile Include="Assets\Scripts\Movement.cs" />
+    <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\SimpleCamera.cs" />
     <Compile Include="Assets\Scripts\V1.1\Dragon\Dragon.cs" />
     <Compile Include="Assets\Scripts\V1.1\Dragon\FlyDragon.cs" />
     <Compile Include="Assets\Scripts\V1.1\Dragon\MagicDragon\AirDragon.cs" />
@@ -87,6 +88,7 @@
     <Compile Include="Assets\Scripts\V1.1\Humanoid\Lizzard.cs" />
     <Compile Include="Assets\Scripts\V1.1\Interfeice\IElmagic.cs" />
     <Compile Include="Assets\Scripts\V1.1\Interfeice\IWeapon.cs" />
+    <Compile Include="Assets\Scripts\WarriorMovement.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
