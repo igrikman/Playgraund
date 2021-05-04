@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class WarriorMovement : MonoBehaviour
 {
-    public float speed = 6f;           
+    [SerializeField] private CharacterController controller;
+    [SerializeField] private float speed = 6f;           
 
     Vector3 movement;                   
     Animator anim;                      
@@ -14,7 +15,7 @@ public class WarriorMovement : MonoBehaviour
 
     void Awake()
     {
-        floorMask = LayerMask.GetMask("Floor");
+        floorMask = LayerMask.GetMask("Ground");
 
         anim = GetComponent<Animator>();
         playerRigidbody = GetComponent<Rigidbody>();
