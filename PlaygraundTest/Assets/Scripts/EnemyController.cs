@@ -18,6 +18,7 @@ public class EnemyController : MonoBehaviour
 
     public void RemoveEnemy(GameObject enemy)
     {
+
         var enemyScript = enemy.GetComponent<Enemy>();
         enemyList.Remove(enemyScript);
         enemyScript.Die();

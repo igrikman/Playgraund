@@ -1,27 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class FollowCamera : MonoBehaviour
+namespace Game
 {
-
-    [SerializeField] private Transform target;
-    [SerializeField] private float smoothing = 5f;        
-
-    Vector3 offset;                     
-
-    void Start()
-    {
-        offset = transform.position - target.position;
-    }
-
-    void FixedUpdate()
+    public class FollowCamera : MonoBehaviour
     {
 
-        Vector3 targetCamPos = target.position + offset;
+        [SerializeField] private Transform target;
+        [SerializeField] private float smoothing = 5f;
 
-       
-        transform.position = Vector3.Lerp(transform.position, targetCamPos, smoothing * Time.deltaTime);
+        Vector3 offset;
+
+        void Start()
+        {
+            offset = transform.position - target.position;
+        }
+
+        void FixedUpdate()
+        {
+            if (target != null)
+            {
+                Vector3 targetCamPos = target.position + offset;
+                transform.position = Vector3.Lerp(transform.position, targetCamPos, smoothing * Time.deltaTime);
+            }
+        }
+
     }
 }
-

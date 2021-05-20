@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 namespace Game
 {
     public class PlayerShooting : MonoBehaviour
     {
-        public int damagePerShot = 2;
+        public int damagePerShot = 20;
         public float timeBetweenBullets = 0.15f;
         public float range = 100f;
         public AudioSource _audioSource;
@@ -67,12 +68,11 @@ namespace Game
 
                 if (Physics.Raycast(shootRay, out shootHit, range, shootableMask))
                 {
-                    EnemyRino enemyHealth = shootHit.collider.GetComponent<EnemyRino>();
+                    EnemyHealth enemyHealth = shootHit.collider.GetComponent<EnemyHealth>();
 
                     if (enemyHealth != null)
                     {
                             enemyHealth.TakeDamage(damagePerShot, shootHit.point);
-                        Debug.LogError("Получил дамаг");
                     }
 
                     gunLine.SetPosition(1, shootHit.point);
