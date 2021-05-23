@@ -8,7 +8,7 @@ namespace Game
     public class Player : MonoBehaviour
     {
         [SerializeField] private int maxHealth = 3;
-        [SerializeField] private int currentHealth;
+        public int currentHealth;
         [SerializeField] private Healtbar healthbar;
         private int score = 0;
         [SerializeField] private TextMeshProUGUI indicator;

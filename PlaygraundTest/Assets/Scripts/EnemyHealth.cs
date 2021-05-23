@@ -6,22 +6,30 @@ namespace Game
 {
     public class EnemyHealth : MonoBehaviour
     {
-        [SerializeField] private int startingHealth = 1;
+
+        [SerializeField] private int startingHealth = 2;
+
         [SerializeField] private AudioClip deathClip;
-        private float currentHealth;
-        private Animator Anim;
+
+        private int currentHealth;
+
+        private Animator anim;
+
         public float sinkSpeed = 2.5f;
+
         bool isDead = false;
         bool isSinking;
-        ParticleSystem hitParticles;
+
+        //ParticleSystem hitParticles;
         CapsuleCollider capsuleCollider;
-        AudioSource enemyAudio;
 
-        private void Start()
+        private void Awake()
         {
-            hitParticles = GetComponentInChildren<ParticleSystem>();
-            currentHealth = startingHealth;
+            anim = GetComponent<Animator>();
+            //hitParticles = GetComponentInChildren<ParticleSystem>();
+            capsuleCollider = GetComponent<CapsuleCollider>();
 
+            currentHealth = startingHealth;
         }
         private void Update()
         {
@@ -40,9 +48,11 @@ namespace Game
 
             currentHealth -= amount;
 
-            hitParticles.transform.position = hitPoint;
+            //hitParticles.transform.position = hitPoint;
+            
+            
 
-            hitParticles.Play();
+            //hitParticles.Play();
 
             if (currentHealth <= 0)
             {
@@ -56,10 +66,8 @@ namespace Game
 
             capsuleCollider.isTrigger = true;
 
-            Anim.SetTrigger("Dead");
-
-            enemyAudio.clip = deathClip;
-            enemyAudio.Play();
+            anim.SetTrigger("Dead");
+            StartSinking();
         }
         public void StartSinking()
         {
