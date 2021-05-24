@@ -66,9 +66,9 @@ namespace Game
                 shootRay.direction = transform.forward;
 
 
-                if (Physics.Raycast(shootRay, out shootHit, range, shootableMask))
+                if (Physics.Raycast(shootRay, out shootHit, range ))
                 {
-                    EnemyHealth enemyHealth = shootHit.collider.GetComponent<EnemyHealth>();
+                    EnemyRino enemyHealth = shootHit.collider.GetComponent<EnemyRino>();
 
                     if (enemyHealth != null)
                     {

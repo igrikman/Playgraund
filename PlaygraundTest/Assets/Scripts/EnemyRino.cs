@@ -6,43 +6,86 @@ namespace Game
 {
     public class EnemyRino : MonoBehaviour
     {
-        private Animator myAnimator;
-        private float distance;
-
+        [SerializeField] private int startingHealth = 20;
         [SerializeField] private float speed;
         [SerializeField] private Rigidbody enemyRb;
         [SerializeField] private Transform player;
         [SerializeField] private NavMeshAgent navmesh;
+        
+        CapsuleCollider capsuleCollider;
 
-        private void Start()
+        public bool IsDead = false;
+        private int currentHealth;
+        private Animator myAnimator;
+        private float distance;
+        private bool sawPlayer = false;
+        private void Awake()
         {
             myAnimator = GetComponent<Animator>();
             navmesh = GetComponent<NavMeshAgent>();
+            capsuleCollider = GetComponent<CapsuleCollider>();
+            currentHealth = startingHealth;
+        }
+        public void SetPlayer(Transform playerTransform)
+        {
+            player = playerTransform;
         }
         void Update()
         {
-            if (player != null)
+            if (player != null && !IsDead)
             {
                 distance = Vector3.Distance(player.position, transform.position);
 
-                //if (distance > 100)
-                //{
-                //    transform.LookAt(player.position);
-                //    navmesh.enabled = false;
-                //    myAnimator.SetBool("Walk", false);
-                //    myAnimator.SetBool("Idle", true);
-
-                //}
-                if (distance <= 80 & distance > 1.5f)
+                if (distance <= 30)
                 {
+
                     navmesh.enabled = true;
                     navmesh.SetDestination(player.position);
                     myAnimator.SetBool("Walk", true);
                     myAnimator.SetBool("Idle", false);
-
+                    sawPlayer = true;
                 }
+                else if(sawPlayer == false)
+                {
+                    myAnimator.SetBool("Walk", false);
+                    myAnimator.SetBool("Idle", true);
+                    navmesh.enabled = false;
+                }
+                
+            }
+            else if (player == null )
+            {
+                myAnimator.SetBool("Walk", false);
+                myAnimator.SetBool("Idle", true);
+                navmesh.enabled = false;
+            }
+            else if(IsDead)
+            {
+                navmesh.enabled = false;
+                capsuleCollider.enabled = false;
+            }
+                    
+        }
+        public void TakeDamage(int amount, Vector3 hitPoint)
+        {
+            Debug.LogWarning("Получил дамаг");
+            if (IsDead)
+                return;
+
+            currentHealth -= amount;
+
+            if (currentHealth <= 0)
+            {
+                Debug.LogWarning("умер рино");
+                IsDead = true;
+
+                capsuleCollider.isTrigger = true;
+
+                myAnimator.SetTrigger("Dead");
+
+                
             }
         }
-
     }
+
 }
