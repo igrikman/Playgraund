@@ -7,13 +7,13 @@ namespace Game
     {
         
         [SerializeField] private float speed = 11.0f;
-        [SerializeField] private Player player;
+        [SerializeField] private WariorController player;
         [SerializeField] private EnemyRino bigEnemyPrefab;
         [SerializeField] private EnemyRino fastEnemyPrefab;
         private List<EnemyRino> enemyListRino;
         [SerializeField] private float spawnTime = 3f;
         [SerializeField] private Transform[] spawnPoints;
-        private EnemyRino Remove;
+      //  private EnemyRino Remove;
 
 
         void Start()
@@ -58,6 +58,7 @@ namespace Game
         }
         public void Death(EnemyRino enemy)
         {
+            player.ScoreCoin(1);
             Destroy(enemy.gameObject, 5f);
         }
         public void RemoveEnemy(EnemyRino enemy)

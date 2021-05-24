@@ -6,17 +6,15 @@ namespace Game
 {
     public class PlayerShooting : MonoBehaviour
     {
-        //ЗАМЕНИТЬ ПЕРВУЮ БУКВУ В ПАБЛИК ПОЛЯХ НА ЗАГЛАВНУЮ
+
         public int damagePerShot = 20;
         public float timeBetweenBullets = 0.15f;
-        public float range = 100f;
+        public float Range = 100f;
         public AudioSource _audioSource;
 
         float timer;
         Ray shootRay;
         RaycastHit shootHit;
-
-        int shootableMask;
 
         ParticleSystem gunParticles;
         LineRenderer gunLine;
@@ -26,8 +24,6 @@ namespace Game
 
         private void Awake()
         {
-            shootableMask = LayerMask.GetMask("Shootable");
-
             gunParticles = GetComponent<ParticleSystem>();
             gunLine = GetComponent<LineRenderer>();
             gunAudio = GetComponent<AudioSource>();
@@ -66,7 +62,7 @@ namespace Game
                 shootRay.direction = transform.forward;
 
 
-                if (Physics.Raycast(shootRay, out shootHit, range ))
+                if (Physics.Raycast(shootRay, out shootHit, Range ))
                 {
                     EnemyRino enemyHealth = shootHit.collider.GetComponent<EnemyRino>();
 
@@ -79,7 +75,7 @@ namespace Game
                 }
                 else
                 {
-                    gunLine.SetPosition(1, shootRay.origin + shootRay.direction * range);
+                    gunLine.SetPosition(1, shootRay.origin + shootRay.direction * Range);
                 }
 
                 Debug.Log(shootHit.collider != null ? "Попал в " + shootHit.collider : "No target");

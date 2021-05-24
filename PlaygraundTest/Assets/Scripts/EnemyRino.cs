@@ -11,7 +11,6 @@ namespace Game
         [SerializeField] private Rigidbody enemyRb;
         [SerializeField] private Transform player;
         [SerializeField] private NavMeshAgent navmesh;
-        
         CapsuleCollider capsuleCollider;
 
         public bool IsDead = false;
@@ -83,7 +82,6 @@ namespace Game
 
                 myAnimator.SetTrigger("Dead");
 
-                
             }
         }
     }
