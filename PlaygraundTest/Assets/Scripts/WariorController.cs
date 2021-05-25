@@ -11,6 +11,7 @@ namespace Game
         [SerializeField] private int maxHealth = 3;
         public int currentHealth;
         [SerializeField] private Healtbar healthbar;
+        //
         private int score = 0;
         [SerializeField] private TextMeshProUGUI indicator;
         //
