@@ -7302,7 +7302,7 @@ PrefabInstance:
     - target: {fileID: 3508478484560581720, guid: 8f95315cb5e95fa46b3b8c651e024332,
         type: 3}
       propertyPath: m_Name
-      value: EnemyController
+      value: GameController
       objectReference: {fileID: 0}
     - target: {fileID: 3508478484560581720, guid: 8f95315cb5e95fa46b3b8c651e024332,
         type: 3}

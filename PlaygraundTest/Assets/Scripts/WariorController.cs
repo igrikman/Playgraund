@@ -16,7 +16,7 @@ namespace Game
         [SerializeField] private TextMeshProUGUI indicator;
         //
         [SerializeField] private CharacterController controller;
-        [SerializeField] private float speed = 6f;
+        [SerializeField] private float speed ;
 
         Vector3 movement;
         Animator anim;
@@ -82,7 +82,12 @@ namespace Game
 
             Animating(h, v);
         }
-        void Move(float h, float v)
+        public void Speed(float speeds)
+        {
+             speed = speeds + 6f;
+        }
+        
+       public void Move(float h, float v)
         {
             movement.Set(h, 0f, v);
 
