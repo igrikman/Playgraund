@@ -8,7 +8,7 @@ namespace Game
 
     public class WariorController : MonoBehaviour
     {
-        private GameController gameContrl;
+        [SerializeField] private GameController gameContrl;
         [SerializeField] private int maxHealth = 3;
         public int currentHealth;
         [SerializeField] private Healtbar healthbar;
@@ -38,7 +38,7 @@ namespace Game
                 ScoreCoin(1);
             }
             if (PlayerCol.gameObject.tag == "Bonus")
-            {
+            { 
                 Destroy(PlayerCol.gameObject, 0f);
                 gameContrl.Bonus();
             }

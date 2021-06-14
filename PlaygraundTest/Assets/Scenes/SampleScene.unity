@@ -7481,6 +7481,11 @@ PrefabInstance:
       propertyPath: indicator
       value: 
       objectReference: {fileID: 281131641}
+    - target: {fileID: 3811364059330302517, guid: b5d2502288d334849ab837f911cac648,
+        type: 3}
+      propertyPath: gameContrl
+      value: 
+      objectReference: {fileID: 1909811390}
     - target: {fileID: 3811364060671344291, guid: b5d2502288d334849ab837f911cac648,
         type: 3}
       propertyPath: m_LocalPosition.x
