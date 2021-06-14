@@ -5,7 +5,7 @@ namespace Game
 {
     public class GameController : MonoBehaviour
     {
-        private ManagerBonus manBonus;
+        private ManagerBonus mBonus;
         [SerializeField] private GameObject bonus;
         //[SerializeField] private float speed = 11.0f;
         [SerializeField] private WariorController player;
@@ -14,14 +14,14 @@ namespace Game
         private List<EnemyRino> enemyListRino;
         [SerializeField] private float spawnTime = 3f;
         [SerializeField] private Transform[] spawnPoints;
-      
+
         void Start()
         {
             InvokeRepeating("Spawn", spawnTime, spawnTime);
             enemyListRino = new List<EnemyRino>();
 
         }
-        void Spawn()
+        public void Spawn()
         {
             if (player.currentHealth <= 0f)
             {
@@ -59,57 +59,65 @@ namespace Game
             enemyListRino.Remove(enemy);
             player.ScoreCoin(5);
             Destroy(enemy.gameObject, 2f);
-            Bonus(enemy);
+            SpawnBonus(enemy);
         }
-        public void Bonus(EnemyRino enemy)
+        public void SpawnBonus(EnemyRino enemy)
         {
-            var bonusRandIndex = Random.Range(0, 100);
+            var bonusSpawnRandIndex = Random.Range(0, 101);
 
-            if (bonusRandIndex >= 0 && bonusRandIndex < 35)
+            if (bonusSpawnRandIndex >= 0 && bonusSpawnRandIndex < 40)
             {
-                Score(enemy);
+                var Bonus = Instantiate(bonus);
+                Bonus.transform.position = enemy.transform.position;
+                Debug.LogWarning("bonus");
             }
-            if (bonusRandIndex >= 36 && bonusRandIndex < 47)
-            {
-                Speed(enemy);
-            }
-            if (bonusRandIndex >= 47 && bonusRandIndex < 100)
+
+            if (bonusSpawnRandIndex >= 41 && bonusSpawnRandIndex < 101)
             {
                 Debug.LogWarning("Ни хуя");
             }
         }
-        public ManagerBonus.Bonus mBonus;
-        private void OnCollisionEnter(Collision BonusCol)
+        public void Bonus()
         {
-            if (BonusCol.gameObject.tag == "Player")
+            var bonusRandIndex = Random.Range(0, 11);
+            if (bonusRandIndex >= 0 && bonusRandIndex < 6)
             {
-                Destroy(bonus.gameObject);
+                Score();
+                Debug.LogWarning("очко 100");
+
+            }
+            if (bonusRandIndex >= 7 && bonusRandIndex < 11)
+            {
+                Speed();
+                Debug.LogWarning("скорость");
+
             }
         }
 
-        public void Score(EnemyRino enemy)
+
+        //public void OnCollisionEnter(WariorController player)
+        //{
+        //    if (player.gameObject.tag == "Bonus")
+        //    {
+        //        Bonus();
+        //    }
+        //}
+
+        public void Score()
         {
-            var newBonus = Instantiate(bonus);
-            newBonus.transform.position = enemy.transform.position;
-            bonus = ManagerBonus.Bonus.Score;
-            Debug.LogWarning("Score");
             
-            if (manBonus== player)
-            {
+            
+                Debug.LogWarning("Score");
                 player.ScoreCoin(100);
-            }
+            
         }
-        public void Speed(EnemyRino enemy)
+        public void Speed()
         {
             
-            mBonus = ManagerBonus.Bonus.Speed;
-            var newBonus = Instantiate(bonus);
-            newBonus.transform.position = enemy.transform.position;
-            Debug.LogWarning("Speed");
-            if (manBonus == player)
-            {
+            
+                Debug.LogWarning("Speed");
                 player.Speed(6f);
-            }
+            
         }
 
 
