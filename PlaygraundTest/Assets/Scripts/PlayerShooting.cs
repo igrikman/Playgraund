@@ -6,7 +6,6 @@ namespace Game
 {
     public class PlayerShooting : MonoBehaviour
     {
-
         public int damagePerShot = 20;
         public float timeBetweenBullets = 0.15f;
         public float Range = 100f;
@@ -61,8 +60,7 @@ namespace Game
                 shootRay.origin = transform.position;
                 shootRay.direction = transform.forward;
 
-
-                if (Physics.Raycast(shootRay, out shootHit, Range ))
+                if (Physics.Raycast(shootRay, out shootHit, Range))
                 {
                     EnemyRino enemyHealth = shootHit.collider.GetComponent<EnemyRino>();
 
@@ -70,16 +68,13 @@ namespace Game
                     {
                         enemyHealth.TakeDamage(damagePerShot, shootHit.point);
                     }
-
                     gunLine.SetPosition(1, shootHit.point);
                 }
                 else
                 {
                     gunLine.SetPosition(1, shootRay.origin + shootRay.direction * Range);
                 }
-
                 Debug.Log(shootHit.collider != null ? "Попал в " + shootHit.collider : "No target");
-
             }
         }
 

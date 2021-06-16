@@ -14,10 +14,12 @@ namespace Game
         CapsuleCollider capsuleCollider;
 
         public bool IsDead = false;
+
         private int currentHealth;
         private Animator myAnimator;
         private float distance;
         private bool sawPlayer = false;
+
         private void Awake()
         {
             myAnimator = GetComponent<Animator>();
@@ -25,10 +27,7 @@ namespace Game
             capsuleCollider = GetComponent<CapsuleCollider>();
             currentHealth = startingHealth;
         }
-        public void SetPlayer(Transform playerTransform)
-        {
-            player = playerTransform;
-        }
+
         void Update()
         {
             if (player != null && !IsDead)
@@ -44,27 +43,33 @@ namespace Game
                     myAnimator.SetBool("Idle", false);
                     sawPlayer = true;
                 }
-                else if(sawPlayer == false)
+                else if (sawPlayer == false)
                 {
                     myAnimator.SetBool("Walk", false);
                     myAnimator.SetBool("Idle", true);
                     navmesh.enabled = false;
                 }
-                
+
             }
-            else if (player == null )
+            else if (player == null)
             {
                 myAnimator.SetBool("Walk", false);
                 myAnimator.SetBool("Idle", true);
                 navmesh.enabled = false;
             }
-            else if(IsDead)
+            else if (IsDead)
             {
                 navmesh.enabled = false;
                 capsuleCollider.enabled = false;
             }
-                    
+
         }
+
+        public void SetPlayer(Transform playerTransform)
+        {
+            player = playerTransform;
+        }
+
         public void TakeDamage(int amount, Vector3 hitPoint)
         {
             Debug.LogWarning("Получил дамаг");
