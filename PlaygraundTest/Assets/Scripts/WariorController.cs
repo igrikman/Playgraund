@@ -16,7 +16,7 @@ namespace Game
         [SerializeField] private float speed;
 
         public int currentHealth;
-
+        
         private Vector3 movement;
         private Animator anim;
         private Rigidbody playerRigidbody;

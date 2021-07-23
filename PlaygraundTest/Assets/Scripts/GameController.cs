@@ -14,7 +14,7 @@ namespace Game
 
         private bool actBonus = false;
         private List<EnemyRino> enemyListRino;
-
+        private GameObject[] gameObjects;
         void Start()
         {
             InvokeRepeating("Spawn", spawnTime, spawnTime);
@@ -82,15 +82,25 @@ namespace Game
         public void Bonus()
         {
             var bonusRandIndex = Random.Range(0, 11);
-            if (bonusRandIndex >= 0 && bonusRandIndex < 4)
+            //if (bonusRandIndex >= 1 && bonusRandIndex < 4)
+            //{
+            //    Score();
+            //    Debug.LogWarning("очко 100");
+            //}
+            //if (bonusRandIndex >= 6 && bonusRandIndex < 11)
+            //{
+            //    Speed();
+            //    Debug.LogWarning("скорость");
+            //}
+            //if (bonusRandIndex >= 12 && bonusRandIndex < 13)
+            //{
+            //    StopAll();
+            //    Debug.LogWarning("заморозить мобов");
+            //}
+            if (bonusRandIndex >= 0 && bonusRandIndex < 11)
             {
-                Score();
-                Debug.LogWarning("очко 100");
-            }
-            if (bonusRandIndex >= 6 && bonusRandIndex < 11)
-            {
-                Speed();
-                Debug.LogWarning("скорость");
+                DestroyAll();
+                Debug.LogWarning("уничтожить всех мобов");
             }
         }
 
@@ -110,7 +120,19 @@ namespace Game
                 StartCoroutine(timeBonus());
             }
         }
+        public void StopAll()
+        {
 
+        }
+        public void DestroyAll()
+        {
+            gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
+            for (int i = 0; i < gameObjects.Length; ++i)
+            {
+                Destroy(gameObjects[i]);
+            }
+            player.ScoreCoin(1000);
+        }
         IEnumerator timeBonus()
         {
             yield return new WaitForSeconds(1f);
